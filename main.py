@@ -1,13 +1,13 @@
-from Library_Management_System.add_books import add
-from Library_Management_System.issue_book import issue
-from Library_Management_System.show_books import show, get_total_books, get_books_by_title
-from Library_Management_System.return_book import return_book
+from add_books import add
+from issue_book import issue
+from show_books import show, get_total_books, get_books_by_title
+from return_book import return_book
 
 def library():
     while True:
         print("\n1. Add Book\n2. Show Book\n3. Issue Book\n4. Return Book\n5. Show Total Books\n6. Search Book by Title\n7. Exit")
         
-        choice = input("Enter your choice: ")
+        choice = input("Enter your choice: ").strip()
         
         try:
             choice = int(choice)

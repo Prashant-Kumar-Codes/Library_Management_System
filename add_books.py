@@ -1,4 +1,4 @@
-from Library_Management_System.utils import books
+from utils import books
 
 def add():
     book_name = input("Enter the Book name to add: ").upper()

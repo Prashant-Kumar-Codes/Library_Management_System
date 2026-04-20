@@ -1,5 +1,6 @@
-from Library_Management_System.utils import books
+from utils import books
 
+# function to show list of books available
 def show():
     if not books:
         print("\nCurrently, no books are available in the library.")
@@ -9,9 +10,9 @@ def show():
             print(f"{i}. {book_name}")
         print(f"-----------------------")
 
+# function fot get total number of books 
 def get_total_books():
-    total_count = len(books)
-    print(f"\nTotal number of books available in the library: {total_count}")
+    print(f"\nTotal number of books available in the library: {len(books)}")
 
 def get_books_by_title():
     book_title = input("Enter the name of the book to check its availability: ").upper()
