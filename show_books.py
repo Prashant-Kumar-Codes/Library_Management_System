@@ -5,9 +5,9 @@ def show():
     if not books:
         print("\nCurrently, no books are available in the library.")
     else:
-        print("\n--- Available Books ---")
-        for i, book_name in enumerate(books, 1):
-            print(f"{i}. {book_name}")
+        print("\n--- Available Books and thier Count ---")
+        for i, book_name in enumerate(set(books), 1):
+            print(f"{i}. {book_name}: {books.count(book_name)}")
         print(f"-----------------------")
 
 # function fot get total number of books 

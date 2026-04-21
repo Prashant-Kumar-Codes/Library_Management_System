@@ -2,6 +2,7 @@ from add_books import add
 from issue_book import issue
 from show_books import show, get_total_books, get_books_by_title
 from return_book import return_book
+from utils import data
 
 def library():
     while True:
@@ -33,6 +34,8 @@ def library():
                 print("Thank you")
                 break
             
+            elif choice == 8:
+                print(data)
             else:
                 print("Invalid choice")
         

@@ -8,8 +8,11 @@ def return_book():
     else:
         book_name = input("Enter book name: ").upper()
     
-        if book_name in data[roll_no]:
-            data[roll_no].remove(book_name)
+        #if book_name in data[roll_no]:
+        if data[roll_no][book_name]:
+            #data[roll_no].remove(book_name)
+            print(data[roll_no][book_name])
+            del data[roll_no][book_name]
             
             # removed the roll_no form data dictionary if there are no book left to return
             if len(data[roll_no]) == 0:
