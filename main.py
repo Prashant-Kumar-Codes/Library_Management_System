@@ -34,7 +34,7 @@ def library():
                 print("Thank you")
                 break
             
-            elif choice == 8:
+            elif choice == 'data':
                 print(data)
             else:
                 print("Invalid choice")
