@@ -38,9 +38,13 @@ def return_book():
                 fine += 10 * (weeks + 1) * remaining_days
                 
                 print(f"You have overdue by {days_overdue} days. Fine: {fine} Rs")
-            
+                
+            else:
+                print('You have no overdues to pay')
+                
+            # removed the book data of that roll no
             del data[roll_no][book_name]
-            
+
             # removed the roll_no form data dictionary if there are no book left to return
             if len(data[roll_no]) == 0:
                 del data[roll_no]
