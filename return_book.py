@@ -1,5 +1,6 @@
 from utils import issue_books, books, data
 from datetime import datetime
+import math
 
 def return_book():
     roll_no = int(input('Enter your Roll Number: '))
@@ -21,6 +22,8 @@ def return_book():
             2nd week - 10*2/day/book
             3rd week - 10*2*3/day/book
             Like that continue
+            
+            Pattern: Week N → 10 * N! Rs/day
             '''
             
             # Calculate days overdue
@@ -29,13 +32,19 @@ def return_book():
             # Calculate fine based on weeks overdue
             fine = 0
             if days_overdue > 10:
-                weeks = (days_overdue - 10) // 7
-                for week_num in range(1, weeks + 1):
-                    fine += 10 * week_num * 7  # 10Rs/day for week 1, 20Rs/day for week 2, etc. (7 days per week)
+                overdue_days = days_overdue - 10
                 
-                # Add fine for remaining days
-                remaining_days = (days_overdue - 10) % 7
-                fine += 10 * (weeks + 1) * remaining_days
+                # Full weeks
+                weeks = overdue_days // 7
+                for week_num in range(1, weeks + 1):
+                    daily_rate = 10 * math.factorial(week_num)  # 10 * N!
+                    fine += daily_rate * 7
+                
+                # Remaining days in the current week
+                remaining_days = overdue_days % 7
+                if remaining_days > 0:
+                    daily_rate = 10 * math.factorial(weeks + 1)
+                    fine += daily_rate * remaining_days
                 
                 print(f"You have overdue by {days_overdue} days. Fine: {fine} Rs")
                 
