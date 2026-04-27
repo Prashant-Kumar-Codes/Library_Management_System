@@ -31,7 +31,7 @@ def return_book():
             if days_overdue > 10:
                 weeks = (days_overdue - 10) // 7
                 for week_num in range(1, weeks + 1):
-                    fine += 10 * week_num  # 10Rs/day for week 1, 20Rs/day for week 2, etc.
+                    fine += 10 * week_num * 7  # 10Rs/day for week 1, 20Rs/day for week 2, etc. (7 days per week)
                 
                 # Add fine for remaining days
                 remaining_days = (days_overdue - 10) % 7
@@ -56,3 +56,4 @@ def return_book():
             
         else:
             print("You have not issued that book.\nTry again")
+            
